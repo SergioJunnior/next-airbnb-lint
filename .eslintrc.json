@@ -25,15 +25,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module",
     "tsconfigRootDir": ".",
-    "project": [
-      "./tsconfig.json"
-    ]
+    "project": ["./tsconfig.json"]
   },
   // Configuring third-party plugins
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["prettier", "react", "@typescript-eslint"],
   // Resolve imports
   "settings": {
     "import/resolver": {
@@ -46,16 +41,12 @@
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "linebreak-style": "off",
     // Configure prettier
     "prettier/prettier": "error",
     "react/function-component-definition": [
       "error",
-      // <-------- "2" didn't work for me, for some reason
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
@@ -76,7 +67,7 @@
     // Enforce the use of the shorthand syntax.
     "object-shorthand": "error",
     "no-console": "warn",
-    "no-unused-vars": "error",
+    "no-unused-vars": ["error", { "vars": "all", "args": "all" }],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "import/prefer-default-export": "off",
@@ -84,18 +75,13 @@
     "react/no-unknown-property": [
       2,
       {
-        "ignore": [
-          "jsx",
-          "global"
-        ]
+        "ignore": ["jsx", "global"]
       }
     ]
   },
   "overrides": [
     {
-      "files": [
-        "src/pages/**/*.tsx"
-      ],
+      "files": ["src/pages/**/*.tsx", "src/pages/**/*.ts"],
       "rules": {
         "import/no-default-export": "off"
       }

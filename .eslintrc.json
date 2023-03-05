@@ -32,9 +32,7 @@
   // Resolve imports
   "settings": {
     "import/resolver": {
-      "typescript": {
-        "project": "./tsconfig.json"
-      }
+      "typescript": {}
     },
     "react": {
       "version": "detect"
